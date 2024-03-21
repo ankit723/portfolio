@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: repeating-linear-gradient(to bottom, #000000, #2C3E50, #171622);
+    height: 300vh;
+    width: 100vw;
+}
