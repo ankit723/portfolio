@@ -164,10 +164,10 @@ html {
 
 .exploreMore {
     border-radius: 0.2rem;
-    border-image: repeating-linear-gradient(to bottom right, #ffcc00, #c8ff00) 1 !important;
+    border-image: repeating-linear-gradient(to bottom right, #ffcc00, #6f00ff) 1 !important;
     transition: 0.1s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: repeating-linear-gradient(to bottom right, #ffcc00, #c8ff00);
+    background: repeating-linear-gradient(to bottom right, #ffcc00, #6f00ff);
     color: black !important;
 }
 
@@ -180,14 +180,14 @@ html {
 
 .doBuisness {
     border-radius: 0.2rem;
-    border-image: repeating-linear-gradient(to bottom right, #ffcc00, #ddff00) 1 !important;
+    border-image: repeating-linear-gradient(to bottom right, #ffcc00, #6f00ff) 1 !important;
     transition: 0.1s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: white !important;
 }
 
 .doBuisness:hover {
-    background: repeating-linear-gradient(to bottom right, #ffcc00, #eeff00);
+    background: repeating-linear-gradient(to bottom right, #ffcc00, #6f00ff);
     color: black !important;
     border-radius: 0.2rem;
     border-color: black;

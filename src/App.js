@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import './App.css';
-import Home from './Components/home';
-import Starter from './Components/starter';
-
-
-
+import React, { useState, useEffect } from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./Components/home";
+import Starter from "./Components/starter";
 
 const MouseDot = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isClicked, setIsClicked] = useState(false);
 
   const handleMouseMove = (e) => {
-    setPosition({ x: e.clientX-7, y: e.clientY-4 });
+    setPosition({ x: e.clientX - 7, y: e.clientY - 4 });
   };
 
   const handleMouseDown = () => {
     setIsClicked(true);
-
   };
 
   const handleMouseUp = () => {
@@ -25,14 +21,14 @@ const MouseDot = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousedown", handleMouseDown);
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousedown", handleMouseDown);
+      document.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
@@ -40,26 +36,33 @@ const MouseDot = () => {
 
   return (
     <div
-      className={`mouse-dot ${isClicked ? 'clicked' : ''}`}
-      style={{ left: position.x, top: position.y, width: dotSize, height: dotSize, display:'flex', justifyContent:'center', alignItems:"center" }}
-    > .</div>
+      className={`mouse-dot ${isClicked ? "clicked" : ""}`}
+      style={{
+        left: position.x,
+        top: position.y,
+        width: dotSize,
+        height: dotSize,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {" "}
+      .
+    </div>
   );
 };
 
 function App() {
-
   return (
-    <div className="app">
-      <div>
-        <MouseDot />
-      </div>
+    <Router>
+      <MouseDot />
 
       <Routes>
-        <Route path='/' Component={Starter}/>
-        <Route path='/home' Component={Home}/>
+        <Route path="/" element={<Starter />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
-
-    </div>
+    </Router>
   );
 }
 
