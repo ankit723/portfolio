@@ -194,21 +194,40 @@ const Starter = () => {
                 Computer Science at CV Raman Global University, Bhubaneswar, I
                 find joy in exploring the vast world of programming.
               </p>
-              <button
-                className="exploreMore"
-                style={{
-                  padding: "1rem",
-                  margin: "1rem 0",
-                  backgroundColor: "transparent",
-                  fontSize: "1rem",
-                  cursor: "pointer",
-                  border: "1px solid #d1d1d1",
-                  color: "white",
-                }}
-                onClick={handleClick}
-              >
-                Explore more
-              </button>
+              <div className="" style={{ display: "flex", gap: "1rem" }}>
+                <button
+                  className="exploreMore"
+                  style={{
+                    padding: "1rem",
+                    margin: "1rem 0",
+                    backgroundColor: "transparent",
+                    fontSize: "1rem",
+                    cursor: "pointer",
+                    border: "1px solid #d1d1d1",
+                    color: "white",
+                  }}
+                  onClick={handleClick}
+                >
+                  Know me better
+                </button>
+
+                <button
+                  className="doBuisness"
+                  style={{
+                    padding: "1rem",
+                    margin: "1rem 0",
+                    backgroundColor: "transparent",
+                    fontSize: "1rem",
+                    cursor: "pointer",
+                    border: "1px solid #d1d1d1",
+                    color: "white",
+                  }}
+                  onClick={handleClick}
+                >
+                  Start Buisness
+                </button>
+              </div>
+
             </div>
 
             <div className="imageContainer">
