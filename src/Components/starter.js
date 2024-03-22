@@ -6,99 +6,8 @@ import linkedin from "../background-image/linked.webp";
 import leetcode from "../background-image/LeetCode.png";
 import LogoPage from "./logoPage";
 import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
+import Terminal from "./terminal"
 import _ from 'lodash';
-
-
-// import instagram from "../background-image/instagram.jpg";
-
-const TypingEffect = ({ texts, interval, pauseInterval }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [textIndex, setTextIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-
-  useEffect(() => {
-    let timeout;
-
-    const typeText = () => {
-      if (reverse) {
-        setDisplayText((prevText) => prevText.slice(0, -1));
-      } else {
-        setDisplayText((prevText) => prevText + texts[textIndex][charIndex]);
-        setCharIndex((prevIndex) => prevIndex + 1);
-      }
-    };
-
-    const resetText = () => {
-      setCharIndex(0);
-      setReverse(true);
-    };
-
-    const typingInterval = setInterval(() => {
-      if (charIndex < texts[textIndex].length && !reverse) {
-        typeText();
-      } else {
-        if (reverse) {
-          if (displayText.length > 0) {
-            typeText();
-          } else {
-            clearInterval(typingInterval);
-            timeout = setTimeout(() => {
-              resetText();
-            }, pauseInterval);
-          }
-        } else {
-          resetText();
-        }
-      }
-    }, interval);
-
-    return () => {
-      clearInterval(typingInterval);
-      clearTimeout(timeout);
-    };
-  }, [
-    texts,
-    textIndex,
-    charIndex,
-    interval,
-    pauseInterval,
-    reverse,
-    displayText.length,
-  ]);
-
-  useEffect(() => {
-    const autoChangeText = setInterval(() => {
-      const nextIndex = (textIndex + 1) % texts.length;
-      setTextIndex(nextIndex);
-      setReverse(false);
-      setDisplayText(""); // Reset display text before starting the new text
-    }, texts.length * interval + pauseInterval);
-
-    return () => {
-      clearInterval(autoChangeText);
-    };
-  }, [textIndex, interval, pauseInterval, texts]);
-
-  return (
-    <div>
-      <h1
-        style={{
-          color: "white",
-          margin: "0",
-          textAlign: "center",
-          marginTop: "3rem",
-          fontSize: "4rem",
-        }}
-      >
-        {"."}
-        {displayText}
-      </h1>
-    </div>
-  );
-};
-
-
 
 const Starter = () => {
   const navigate = useNavigate();
@@ -133,7 +42,7 @@ const Starter = () => {
 
   const StarterPage = () => {
     return (
-      <div className="App" style={{ overflow: "hidden" }}>
+      <div className="App" style={{ overflow: "auto", background: "repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f)", height: "100vh" }}>
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
         <div className={`typing-text `}>
           <div
@@ -153,8 +62,6 @@ const Starter = () => {
         </div>
 
         <div className={`${showStarter ? "showStarter" : ""}`}>
-
-
           <div
             className="greetings"
             style={{
@@ -360,6 +267,13 @@ const Starter = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="" style={{ color: "white", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop: "-6.5rem" }}>
+          <div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <p style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter" }}>A tech geek?</p>
+            <h2 style={{ marginTop: "0", fontWeight: "lighter", color: "rgb(181, 190, 203)" }}>Use the Terminal to navigate around enter<span style={{ color: "white", fontSize: "1.8rem", fontStyle: "italic" }}>'web --help'</span> to get started</h2>
+          </div>
+          <Terminal />
         </div>
       </div>
     );

@@ -1,0 +1,79 @@
+.terminal {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow effect */
+    width: 55rem;
+    height: 35rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    letter-spacing: 2px !important;
+}
+
+.title-bar {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.354), rgba(0, 0, 0, 0.576));
+    /* Gradient background */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow effect */
+}
+
+.title-text {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.terminal-body {
+    margin-top: 10px;
+}
+
+.terminal-line {
+    font-family: monospace;
+    color: #ffffff;
+    margin-bottom: -2px;
+}
+
+.terminal-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.terminal-prompt {
+    color: #fffb00;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: monospace !important;
+    font-size: 0.9rem;
+}
+
+.terminal-input::placeholder {
+    color: #cccccc;
+}
