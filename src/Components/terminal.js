@@ -33,7 +33,7 @@ const Terminal = () => {
           setOutput([...outPut, ["Enter Valid Argument"]])
         }
         if (input.includes("ls ")) {
-          setOutput([...outPut, ["Specify Argument"]])
+          setOutput([...outPut, ["Specify Valid Argument"]])
         } else {
           setOutput([...outPut, ["Enter Valid Command"]])
         }
@@ -54,7 +54,7 @@ const Terminal = () => {
         {history.map((line, index) => (
           <div key={index} className="terminal-line">
             {line}
-            <ul style={{marginTop:"0"}}>
+            <ul style={{ marginTop: "0" }}>
               {outPut[index].map((comOut, comInd) => (
                 <li>
                   <div className="output-line" key={comInd}>
