@@ -1,10 +1,23 @@
 import React, { useState, useRef } from "react";
 import "./terminal.css"; // Import your CSS file for styling
 
+const jsonCommands = {
+  'ls': ["Specify a valid argument"],
+  'ls --': ["ls does not require `--`"],
+  'ls projects': ["Flask and React Based Self Learning Language Model", "Face and Hand Gesture Recognition Deep Learning Model", "Space Heist Game@Unity-ASP.NET"],
+  'ls experience': ["Arbre Creations@02/24-08/24", "Mudslide Creations@12/23-08/24", "Arthalab@06/23-12/23"],
+  'web': ["Specify a valid argument"],
+  'web --': ["Enter an argument after --"],
+  'web --version': ["Web 0.0.1"],
+  'web --help': ["ls projects", "ls experience", "web --version", "web --help"],
+}
+
+
 const Terminal = () => {
   const initialPrompt = "CodeShell@DevSpace ~ $";
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
+  const [outPut, setOutput] = useState([])
   const inputRef = useRef(null);
 
   const handleInputChange = (e) => {
@@ -13,6 +26,18 @@ const Terminal = () => {
 
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
+      if (jsonCommands[input] !== undefined) {
+        setOutput([...outPut, jsonCommands[input]])
+      } else {
+        if (input.includes("web --")) {
+          setOutput([...outPut, ["Enter Valid Argument"]])
+        }
+        if (input.includes("ls ")) {
+          setOutput([...outPut, ["Specify Argument"]])
+        } else {
+          setOutput([...outPut, ["Enter Valid Command"]])
+        }
+      }
       const newLine = `${initialPrompt} ${input}`;
       setHistory([...history, newLine]);
       setInput("");
@@ -29,6 +54,16 @@ const Terminal = () => {
         {history.map((line, index) => (
           <div key={index} className="terminal-line">
             {line}
+            <ul style={{marginTop:"0"}}>
+              {outPut[index].map((comOut, comInd) => (
+                <li>
+                  <div className="output-line" key={comInd}>
+                    {comOut}
+                  </div>
+                </li>
+              ))}
+            </ul>
+
           </div>
         ))}
         <div className="terminal-input-container">

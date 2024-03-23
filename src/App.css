@@ -16,6 +16,7 @@ body {
     margin-left: 5rem;
 }
 
+
 .enlarge1:hover {
     height: 8rem !important;
     width: 14rem !important;
@@ -64,6 +65,7 @@ body {
 .app {
     position: relative;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 
