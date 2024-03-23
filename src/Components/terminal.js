@@ -9,11 +9,12 @@ const jsonCommands = {
   'web': ["Specify a valid argument"],
   'web --': ["Enter an argument after --"],
   'web --version': ["Web 0.0.1"],
-  'web --help': ["ls projects", "ls experience", "web --version", "web --help"],
+  'web -mode --gui': ["openGui"],
+  'web --help': ["ls projects", "ls experience", "web --version", "web --help", 'web -mode --gui'],
 }
 
 
-const Terminal = () => {
+const Terminal = (props) => {
   const initialPrompt = "CodeShell@DevSpace ~ $";
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
@@ -27,7 +28,14 @@ const Terminal = () => {
   const handleEnterPress = (e) => {
     if (e.key === "Enter") {
       if (jsonCommands[input] !== undefined) {
-        setOutput([...outPut, jsonCommands[input]])
+        if(jsonCommands[input][0]==='openGui'){
+          setOutput([...outPut, ["Opening Gui Version..."]])
+          setTimeout(()=>{
+            props.handleOpenGui()
+          }, 2000)
+        }else{
+          setOutput([...outPut, jsonCommands[input]])
+        }
       } else {
         if (input.includes("web --")) {
           setOutput([...outPut, ["Enter Valid Argument"]])

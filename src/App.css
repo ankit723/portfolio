@@ -8,6 +8,7 @@ body {
     /* background: repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f); */
     overflow-x: hidden;
     font-family: "Varela Round", sans-serif;
+    scroll-behavior: smooth;
 }
 
 

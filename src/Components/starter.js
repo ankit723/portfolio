@@ -273,7 +273,7 @@ const Starter = () => {
             <p style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter" }}>A tech geek?</p>
             <h2 style={{ marginTop: "0", fontWeight: "lighter", color: "rgb(181, 190, 203)" }}>Use the Terminal to navigate around enter<span style={{ color: "white", fontSize: "1.8rem", fontStyle: "italic" }}>'web --help'</span> to get started</h2>
           </div>
-          <Terminal />
+          <Terminal handleOpenGui={handleClick}/>
         </div>
       </div>
     );
