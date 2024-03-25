@@ -25,6 +25,7 @@ const Terminal = (props) => {
   const [runtime, setRuntime] = useState(false)
   const inputRef = useRef(null);
   const [terminalTitle, setTerminalTitle]=useState("Web Terminal")
+  const [type, setType]=useState("")
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -43,6 +44,14 @@ const Terminal = (props) => {
           setTimeout(() => {
             setTerminalTitle("JavaScript Runtime")
             setRuntime(true)
+            setType("js")
+          }, 2500)
+        }else if (jsonCommands[input][0] === 'initiatePYRuntime') {
+          setOutput([...outPut, ["Initiating Python Runtime..."]])
+          setTimeout(() => {
+            setTerminalTitle("Python Runtime")
+            setRuntime(true)
+            setType("py")
           }, 2500)
         }
         else {
@@ -79,7 +88,7 @@ const Terminal = (props) => {
         <span className="title-text">{terminalTitle}</span>
       </div>
       <div className="terminal-body">
-        {runtime ? <TextEditor exitButton={handleCloseEditor} changeTitle={handleTitleChange}/> : (
+        {runtime ? <TextEditor exitButton={handleCloseEditor} changeTitle={handleTitleChange} type={type}/> : (
           <>
             {history.map((line, index) => (
               <div key={index} className="terminal-line">
