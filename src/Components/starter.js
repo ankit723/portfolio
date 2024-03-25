@@ -5,9 +5,9 @@ import github from "../background-image/github.jpg";
 import linkedin from "../background-image/linked.webp";
 import leetcode from "../background-image/LeetCode.png";
 import LogoPage from "./logoPage";
-import TextScramble, { ScrambleTexts } from '@twistezo/react-text-scramble'
-import Terminal from "./terminal"
-import _ from 'lodash';
+import TextScramble, { ScrambleTexts } from "@twistezo/react-text-scramble";
+import Terminal from "./terminal";
+import _ from "lodash";
 
 const Starter = () => {
   const navigate = useNavigate();
@@ -24,10 +24,10 @@ const Starter = () => {
   const [showStarter, setShowStarter] = useState(false);
   useEffect(() => {
     if (logoDone) {
-      setShowStarter(true)
+      setShowStarter(true);
       setTimeout(() => {
-        setShowStarter(false)
-      }, 450)
+        setShowStarter(false);
+      }, 450);
     }
   }, [logoDone]);
 
@@ -46,7 +46,8 @@ const Starter = () => {
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
         <div className={`typing-text `}>
           <div
-            className={`typing-text ${showPage ? "topTheText" : ""}`} id="hello"
+            className={`typing-text ${showPage ? "topTheText" : ""}`}
+            id="hello"
             style={{
               display: "flex",
               width: "100vw",
@@ -54,10 +55,14 @@ const Starter = () => {
               justifyContent: "center",
               alignItems: "center",
               fontSize: "4rem",
-              color: "rgb(181, 190, 203)"
-            }}>
-            <TextScramble texts={textsToType} letterSpeed={10}
-              nextLetterSpeed={200} />
+              color: "rgb(181, 190, 203)",
+            }}
+          >
+            <TextScramble
+              texts={textsToType}
+              letterSpeed={10}
+              nextLetterSpeed={200}
+            />
           </div>
         </div>
 
@@ -71,7 +76,10 @@ const Starter = () => {
               width: "100vw",
             }}
           >
-            <div className="text" style={{ color: "white", paddingLeft: "2rem" }}>
+            <div
+              className="text"
+              style={{ color: "white", paddingLeft: "2rem" }}
+            >
               <h1
                 style={{
                   fontSize: "3.5rem",
@@ -93,19 +101,23 @@ const Starter = () => {
                 </span>
               </h1>
               <p
-                style={{ fontSize: "1.1rem", margin: "0", fontWeight: "lighter" }}
+                style={{
+                  fontSize: "1.1rem",
+                  margin: "0",
+                  fontWeight: "lighter",
+                }}
               >
                 {" "}
                 An 18-year-old, Who like build stuffs with a passion for
-                technology and a love for coding. Currently pursuing my B.Tech in
-                Computer Science at CV Raman Global University, Bhubaneswar, I
-                find joy in exploring the vast world of programming.
+                technology and a love for coding. Currently pursuing my B.Tech
+                in Computer Science at CV Raman Global University, Bhubaneswar,
+                I find joy in exploring the vast world of programming.
               </p>
               <div className="" style={{ display: "flex", gap: "1rem" }}>
                 <button
                   className="exploreMore"
                   style={{
-                    padding: "1rem",
+                    padding: "1rem 1.5rem",
                     margin: "1rem 0",
                     backgroundColor: "transparent",
                     fontSize: "1rem",
@@ -117,24 +129,7 @@ const Starter = () => {
                 >
                   Know me better
                 </button>
-
-                <button
-                  className="doBuisness"
-                  style={{
-                    padding: "1rem",
-                    margin: "1rem 0",
-                    backgroundColor: "transparent",
-                    fontSize: "1rem",
-                    cursor: "pointer",
-                    border: "1px solid #d1d1d1",
-                    color: "white",
-                  }}
-                  onClick={handleClick}
-                >
-                  Start Buisness
-                </button>
               </div>
-
             </div>
 
             <div className="imageContainer">
@@ -263,17 +258,60 @@ const Starter = () => {
                     />
                   </a>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-        <div className="" style={{ color: "white", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop: "-6.5rem" }}>
-          <div className="" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <p style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter" }}>A tech geek?</p>
-            <h2 style={{ marginTop: "0", fontWeight: "lighter", color: "rgb(181, 190, 203)" }}>Use the Terminal to navigate around enter<span style={{ color: "white", fontSize: "1.8rem", fontStyle: "italic" }}>'web --help'</span> to get started</h2>
+        <div
+          className=""
+          style={{
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            marginTop: "-6.5rem",
+          }}
+        >
+          <div
+            className=""
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p
+              style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter" }}
+            >
+              A tech geek?
+            </p>
+            <h2
+              style={{
+                marginTop: "0",
+                fontWeight: "lighter",
+                color: "rgb(181, 190, 203)",
+              }}
+            >
+              Use the Terminal to navigate around enter
+              <span
+                style={{
+                  color: "white",
+                  fontSize: "1.3rem",
+                  fontStyle: "italic",
+                }}
+              >
+                'web --help'
+              </span>{" "}
+              to get started
+            </h2>
           </div>
-          <Terminal handleOpenGui={handleClick}/>
+          <Terminal handleOpenGui={handleClick} />
+        </div>
+
+        <div className="blogSection" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", width: "100vw" }}>
+          <h1 style={{ color: "white", fontSize: "3rem" }}>Blogs</h1>
         </div>
       </div>
     );

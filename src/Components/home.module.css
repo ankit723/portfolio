@@ -1,7 +1,63 @@
-
-
 .container {
     background: repeating-linear-gradient(to bottom, #000000, #2C3E50, #171622);
     height: 100vh;
     width: 100vw;
+    position: relative;
+}
+
+.navBall {
+    position: fixed;
+    top: -10px;
+    right: -12px;
+    height: 45px;
+    width: 45px;
+    padding: 15px 10px 10px 15px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+}
+
+.mainNavBall {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: -100px;
+    right: -100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: 0.8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+}
+
+.navBallLine1,
+.navBallLine2,
+.navBallLine3 {
+    width: 30px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    margin: 2px 0;
+    transition: 0.8s;
+    margin-right: 1rem;
+}
+
+.navBallLine2 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 6px;
 }
