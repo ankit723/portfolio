@@ -135,7 +135,7 @@ const TextEditor = ({ exitButton, changeTitle, type }) => {
           id="f1"
           style={{ margin: "0 10px", color: "violet", display: "none" }}
         >
-          Closing JavaScript Runtime...
+          {type === "js" ? "Closing JavaScript Runtime..." : "Closing Python Runtime..."}
         </span>
         <span
           className="terminal-prompt"
@@ -166,7 +166,7 @@ const TextEditor = ({ exitButton, changeTitle, type }) => {
           return (
             <div>
               <span>
-                {(type === "js" ? "nodeJs@v21.6.2~$ " : "python@v21.6.2~$ ")}
+                {(type === "js" ? "nodeJs@v21.6.2~$ " : "python@v3.11.2~$ ")}
               </span>
               {out.map((o) => (
                 <>{o}</>
