@@ -5,12 +5,31 @@ import github from "../background-image/github.jpg";
 import linkedin from "../background-image/linked.webp";
 import leetcode from "../background-image/LeetCode.png";
 import LogoPage from "./logoPage";
-import TextScramble, { ScrambleTexts } from "@twistezo/react-text-scramble";
+import TextScramble from "@twistezo/react-text-scramble";
 import Terminal from "./terminal";
-import _ from "lodash";
+import BlogItem from "./blogItem";
 
 const Starter = () => {
   const navigate = useNavigate();
+
+  const randomRotation = () => {
+    return Math.random() < 0.5 ? -15 : 15;
+  };
+
+  useEffect(() => {
+    const gridItems = document.querySelectorAll(".blogItem");
+    gridItems.forEach((item) => {
+      console.log(randomRotation());
+      item.style.transform = `rotateZ(${randomRotation()}deg)`;
+    });
+  }, []);
+  useEffect(() => {
+    // Update the document title when the component mounts
+    document.title = "Home| web-space";
+
+    // Optionally, you can also reset the title when the component unmounts
+    // return () => { document.title = "Default Title"; };
+}, []);
 
   const textsToType = [
     "web developer",
@@ -42,7 +61,14 @@ const Starter = () => {
 
   const StarterPage = () => {
     return (
-      <div className="App" style={{ overflow: "auto", background: "repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f)", height: "100vh" }}>
+      <div
+        className="App"
+        style={{
+          overflow: "auto",
+          background:
+            "repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f)",
+        }}
+      >
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
         <div className={`typing-text `}>
           <div
@@ -81,11 +107,13 @@ const Starter = () => {
               style={{ color: "white", paddingLeft: "2rem" }}
             >
               <h1
+                className="heroHeading"
                 style={{
                   fontSize: "3.5rem",
                   letterSpacing: "0.2rem",
                   margin: "0",
                   marginTop: "2rem",
+                  color: "transparent",
                 }}
               >
                 Hey there! 👋 <br />{" "}
@@ -93,7 +121,7 @@ const Starter = () => {
                   style={{
                     fontSize: "2.5rem",
                     margin: "0",
-                    color: "rgb(181, 190, 203)",
+                    color: "white",
                     fontWeight: "normal",
                   }}
                 >
@@ -271,6 +299,7 @@ const Starter = () => {
             alignItems: "center",
             flexDirection: "column",
             marginTop: "-6.5rem",
+            marginBottom: "5rem",
           }}
         >
           <div
@@ -310,9 +339,47 @@ const Starter = () => {
           <Terminal handleOpenGui={handleClick} />
         </div>
 
-        <div className="blogSection" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "90vh", width: "100vw" }}>
-          <h1 style={{ color: "white", fontSize: "3rem" }}>Blogs</h1>
+        <div className="">
+          <div className="blogSection">
+            <BlogItem />
+            <BlogItem />
+            <BlogItem />
+          </div>
+
+          <div className="blogSection">
+            <BlogItem />
+            <div
+              className="blogItem"
+              style={{
+                background: "none",
+                boxShadow: "none",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                transform: "rotateZ(0deg)",
+              }}
+            >
+              <h1
+                className="BlogsHeading"
+                style={{ color: "white", fontSize: "4.5rem" }}
+              >
+                Blogs
+              </h1>
+            </div>
+            <BlogItem />
+          </div>
+
+          <div className="blogSection">
+            <BlogItem />
+            <BlogItem />
+          </div>
         </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p>&copy; 2024 Ankit Biswas | WebSpace</p>
+          </div>
+        </footer>
       </div>
     );
   };
