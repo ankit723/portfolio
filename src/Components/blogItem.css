@@ -15,8 +15,8 @@ body {
     --card-icon-color: #D4D4D8;
     --card-icon-background-color: rgba(255, 255, 255, 0.08);
     --card-icon-border-color: rgba(255, 255, 255, 0.12);
-    --card-shine-opacity: .1;
-    --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, rgba(16, 185, 129, 0) 0deg, #10B981 25deg, rgba(52, 211, 153, 0.18) 295deg, rgba(16, 185, 129, 0) 360deg);
+    --card-shine-opacity: 0.3;
+    --card-shine-gradient: conic-gradient(from 205deg at 50% 50%, rgb(16, 185, 129) 0deg, #10B981 25deg, rgba(52, 211, 153, 0.749) 295deg, rgba(16, 185, 129, 0) 360deg);
     --card-line-color: #2A2B2C;
     --card-tile-color: rgba(16, 185, 129, 0.05);
     --card-hover-border-color: rgba(255, 255, 255, 0.2);
