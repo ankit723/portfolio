@@ -9,8 +9,8 @@
 
 .container .card {
     position: relative;
-    min-width: 270px;
-    height: 290px;
+    min-width: 250px;
+    height: 270px;
     box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
         inset -5px -5px 15px rgba(255, 255, 255, 0.1),
         5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
@@ -67,8 +67,8 @@
 
 .container .card .box .content h2 {
     position: absolute;
-    top: -90px;
-    right: 20px;
+    top: -110px;
+    right: 10px;
     font-size: 8rem;
     color: rgba(255, 255, 255, 0.1);
 }

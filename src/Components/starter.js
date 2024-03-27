@@ -87,7 +87,7 @@ const Starter = () => {
         style={{
           overflow: "auto",
           background:
-            "repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f)",
+            "repeating-linear-gradient(to bottom, #000000, #2C3E50, #211f2f)",
         }}
       >
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
@@ -305,7 +305,7 @@ const Starter = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            marginTop: "-6.5rem",
+            marginTop: "-6rem",
             marginBottom: "5rem",
           }}
         >
