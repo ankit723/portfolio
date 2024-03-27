@@ -8,6 +8,7 @@ import LogoPage from "./logoPage";
 import TextScramble from "@twistezo/react-text-scramble";
 import Terminal from "./terminal";
 import BlogItem from "./blogItem";
+import Home from "./home";
 
 const Starter = () => {
   const navigate = useNavigate();
@@ -25,11 +26,31 @@ const Starter = () => {
   }, []);
   useEffect(() => {
     // Update the document title when the component mounts
-    document.title = "Home| web-space";
+    document.title = "Home| webSpace";
 
     // Optionally, you can also reset the title when the component unmounts
     // return () => { document.title = "Default Title"; };
-}, []);
+  }, []);
+
+  const [isHeadingAnimated, setIsHeadingAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const hTag = document.getElementById('BlogMainHeading'); // Replace 'BlogMainHeading' with your specific heading ID
+      if (hTag) {
+        const { top, bottom } = hTag.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const midPoint = (top + bottom); // Adjusted midpoint
+        if (midPoint >= 0 && midPoint <= windowHeight) {
+          setIsHeadingAnimated(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const textsToType = [
     "web developer",
@@ -70,6 +91,7 @@ const Starter = () => {
         }}
       >
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
+
         <div className={`typing-text `}>
           <div
             className={`typing-text ${showPage ? "topTheText" : ""}`}
@@ -82,6 +104,7 @@ const Starter = () => {
               alignItems: "center",
               fontSize: "4rem",
               color: "rgb(181, 190, 203)",
+              fontWeight: "bolder"
             }}
           >
             <TextScramble
@@ -109,20 +132,21 @@ const Starter = () => {
               <h1
                 className="heroHeading"
                 style={{
-                  fontSize: "3.5rem",
+                  fontSize: "3.6rem",
                   letterSpacing: "0.2rem",
                   margin: "0",
                   marginTop: "2rem",
                   color: "transparent",
+                  fontWeight: "bolder"
                 }}
               >
                 Hey there! 👋 <br />{" "}
                 <span
                   style={{
-                    fontSize: "2.5rem",
+                    fontSize: "2rem",
                     margin: "0",
                     color: "white",
-                    fontWeight: "normal",
+                    fontWeight: "lighter",
                   }}
                 >
                   I'm Ankit Biswas
@@ -141,23 +165,6 @@ const Starter = () => {
                 in Computer Science at CV Raman Global University, Bhubaneswar,
                 I find joy in exploring the vast world of programming.
               </p>
-              <div className="" style={{ display: "flex", gap: "1rem" }}>
-                <button
-                  className="exploreMore"
-                  style={{
-                    padding: "1rem 1.5rem",
-                    margin: "1rem 0",
-                    backgroundColor: "transparent",
-                    fontSize: "1rem",
-                    cursor: "pointer",
-                    border: "1px solid #d1d1d1",
-                    color: "white",
-                  }}
-                  onClick={handleClick}
-                >
-                  Know me better
-                </button>
-              </div>
             </div>
 
             <div className="imageContainer">
@@ -290,8 +297,8 @@ const Starter = () => {
             </div>
           </div>
         </div>
-        <div
-          className=""
+
+        <div className="Terminal"
           style={{
             color: "white",
             display: "flex",
@@ -339,7 +346,44 @@ const Starter = () => {
           <Terminal handleOpenGui={handleClick} />
         </div>
 
-        <div className="">
+        <Home />
+
+        <div className="Blog" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div
+            className=""
+
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p
+              style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter", color: "white" }}
+            >
+              A Reader or a Learner?
+            </p>
+            <h2 id="BlogMainHeading"
+              style={{
+                marginTop: "0",
+                fontWeight: "lighter",
+                color: "rgb(181, 190, 203)",
+                transition: "1s"
+              }}
+            >
+              Check out my
+              <span
+                className={isHeadingAnimated ? 'blogHeadingAnimated' : ''}
+                style={{
+                  color: "white",
+                  fontSize: "1.3rem",
+                }}
+              >
+                Blogs
+              </span>{" "}
+            </h2>
+          </div>
           <div className="blogSection">
             <BlogItem />
             <BlogItem />
@@ -359,12 +403,7 @@ const Starter = () => {
                 transform: "rotateZ(0deg)",
               }}
             >
-              <h1
-                className="BlogsHeading"
-                style={{ color: "white", fontSize: "4.5rem" }}
-              >
-                Blogs
-              </h1>
+
             </div>
             <BlogItem />
           </div>

@@ -1,6 +1,6 @@
 .container {
-    background: repeating-linear-gradient(to bottom, #000000, #2C3E50, #171622);
-    height: 100vh;
+    background: transparent;
+    height: 100%;
     width: 100vw;
     position: relative;
 }
@@ -26,14 +26,14 @@
 }
 
 .mainNavBall {
-    position: absolute;
+    position: fixed;
     height: 0px;
     width: 0px;
     top: -100px;
     right: -100px;
     background-color: rgb(255, 255, 255);
     border-radius: 50%;
-    transition: 0.8s;
+    transition: 0.8s !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@
     height: 2px;
     background: rgb(0, 0, 0);
     margin: 2px 0;
-    transition: 0.8s;
+    transition: 0.8s !important;
     margin-right: 1rem;
 }
 
@@ -60,4 +60,26 @@
     margin-top: 3px;
     margin-bottom: 3px;
     margin-left: 6px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+@media (min-width: 600px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr) !important;
+        justify-items: center !important;
+
+    }
+}
+
+@media (min-width: 900px) {
+    .projects {
+        grid-template-columns: repeat(3, 1fr) !important;
+        justify-items: center !important;
+
+    }
 }

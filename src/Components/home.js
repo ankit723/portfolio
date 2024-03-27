@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Classes from "./home.module.css";
+import ProjectItem from "./projectItem";
 
 const Home = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -40,6 +41,32 @@ const Home = () => {
           <div className={Classes.navBallLine1} id="navBallLine1"></div>
           <div className={Classes.navBallLine2} id="navBallLine2"></div>
           <div className={Classes.navBallLine3} id="navBallLine3"></div>
+        </div>
+
+        <h1 style={{ margin: "0 2rem", color: "white", fontSize: "2.5rem", paddingTop: "4rem" }}>Tech Stacks</h1>
+        <div className={Classes.projects}>
+          <ProjectItem id={1} heading={"React"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={2} heading={"Next"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={3} heading={"C/C++"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={4} heading={"Python"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={4} heading={"Machine Learning"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={5} heading={"Tensorflow"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={4} heading={"Computer vision"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={5} heading={"OpenCV"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={6} heading={"Java"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={6} heading={"Kotlin"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={6} heading={"Game Development"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={6} heading={"C Sharp"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+        </div>
+
+        <h1 style={{ margin: "0 2rem", color: "white", fontSize: "2.5rem", paddingTop: "6rem" }}>Projects</h1>
+        <div className={Classes.projects}>
+          <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={2} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={3} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={4} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={5} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
+          <ProjectItem id={6} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"} />
         </div>
 
       </div>

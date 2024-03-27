@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+* {
+    overflow-x: visible;
+}
+
 body {
     cursor: none;
     margin: 0;
@@ -237,6 +241,7 @@ body {
     margin: 60px;
     display: inline-block;
     cursor: pointer;
+    transform: rotateZ(var(--rotation));
 }
 
 .blogItem:nth-child(1) {
@@ -280,4 +285,32 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+@keyframes downHeading {
+    from {
+        background: none;
+        -webkit-background-clip: none;
+        -webkit-text-fill-color: transparent;
+        transform: translate(0rem, 0rem);
+    }
+
+    to {
+        position: absolute;
+        background: linear-gradient(to right, rgb(133, 157, 231), rgb(206, 60, 77));
+        background-size: 28%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 4.5rem;
+        transform: translate(-12.5rem, 30.5rem);
+    }
+
+}
+
+.blogHeadingAnimated {
+    font-size: 1.3rem;
+    z-index: 1000;
+    animation: downHeading 2s forwards;
+    text-align: center;
+    font-style: none !important;
 }

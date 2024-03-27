@@ -165,7 +165,7 @@ const TextEditor = ({ exitButton, changeTitle, type }) => {
         {output.map((out) => {
           return (
             <div>
-              <span>
+              <span style={{color:"yellow"}}>
                 {(type === "js" ? "nodeJs@v21.6.2~$ " : "python@v3.11.2~$ ")}
               </span>
               {out.map((o) => (
