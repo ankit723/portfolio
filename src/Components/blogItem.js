@@ -6,7 +6,7 @@ const BlogItem = () => {
 
   return (
     <>
-      <div className="blogItem">
+      <div className="">
         <div class="grid ">
           <div class="card">
             <span class="icon">

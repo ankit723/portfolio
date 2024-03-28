@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Classes from "./home.module.css";
+import img from '../background-image/arrowDown.png'
 import ProjectItem from "./projectItem";
+import TechStack from "./techStack.js";
 
 const Home = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -57,91 +59,12 @@ const Home = () => {
         >
           Tech Stacks
         </h1>
-        <div className={Classes.projects}>
-          <ProjectItem
-            id={1}
-            heading={"React"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={2}
-            heading={"Next"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={3}
-            heading={"C/C++"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={4}
-            heading={"Python"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={4}
-            heading={"Machine Learning"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={5}
-            heading={"Tensorflow"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={4}
-            heading={"Computer vision"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={5}
-            heading={"OpenCV"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={6}
-            heading={"Java"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={6}
-            heading={"Kotlin"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={6}
-            heading={"Game Development"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={6}
-            heading={"C Sharp"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
+        <div className={`${Classes.techStacks} showcase`}>
+          <div className="">
+            <TechStack
+              title={"React"}
+            />
+          </div>
         </div>
 
         <h1

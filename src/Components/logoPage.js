@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TextScramble from "@twistezo/react-text-scramble";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
-import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutlined';
+import ArrowCircleDownOutlinedIcon from "@mui/icons-material/ArrowCircleDownOutlined";
 
 const LogoPage = ({ setDone }) => {
   const [showPage, setShowPage] = useState(false);
@@ -42,11 +42,10 @@ const LogoPage = ({ setDone }) => {
     }, 0);
   };
   const texts = [
-    "web developer",
+    "Web Developer",
     "android developer",
-    "ai-ml engineer",
-    "game developer",
-    "data scientist",
+    "ML Engineer",
+    "Game Developer",
   ];
 
   return (
@@ -72,7 +71,11 @@ const LogoPage = ({ setDone }) => {
       </div>
       <div className="downArrow" onClick={handleClick}>
         <ArrowCircleDownOutlinedIcon
-          style={{ fontSize: "3rem", transform: "translateY(25rem)", color: "whitesmoke" }}
+          style={{
+            fontSize: "3rem",
+            marginBottom: "-20rem",
+            color: "whitesmoke",
+          }}
         />
       </div>
     </div>

@@ -65,15 +65,16 @@
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1rem;
+    padding: 0 10rem;
     justify-items: center;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .projects {
-        grid-template-columns: repeat(3, 1fr) !important;
-        justify-items: center !important;
-
-    }
+.techStacks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1rem;
+    padding: 0 10rem;
+    justify-items: center;
 }

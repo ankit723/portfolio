@@ -350,7 +350,7 @@ const Starter = () => {
 
         <Home />
 
-        <div className="Blog" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div className="Blog" style={{ display: "flex", flexDirection: "column", justifyContent: 'center' }}>
           <div
             className=""
 
@@ -387,32 +387,40 @@ const Starter = () => {
             </h2>
           </div>
           <div className="blogSection">
-            <BlogItem />
-            <BlogItem />
-            <BlogItem />
-          </div>
-
-          <div className="blogSection">
-            <BlogItem />
-            <div
-              className="blogItem"
-              style={{
-                background: "none",
-                boxShadow: "none",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                transform: "rotateZ(0deg)",
-              }}
-            >
-
+            <div className="blogItem">
+              <BlogItem />
             </div>
-            <BlogItem />
-          </div>
 
-          <div className="blogSection">
-            <BlogItem />
-            <BlogItem />
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+
+            <div className="blogItem">
+            </div>
+
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+
+            <div className="blogItem">
+              <BlogItem />
+            </div>
+            
+            <div className="blogItem">
+              <BlogItem />
+            </div>
           </div>
         </div>
 
