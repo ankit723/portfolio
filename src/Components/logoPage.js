@@ -62,6 +62,7 @@ const LogoPage = ({ setDone }) => {
         color: "rgb(181, 190, 203)",
         flexDirection: "column",
         overflow: "auto",
+        fontFamily: "monospace",
       }}
     >
       <div className={`page ${showPage ? "showStarterPage" : ""}`}></div>
@@ -69,7 +70,9 @@ const LogoPage = ({ setDone }) => {
         <TextScramble texts={texts} letterSpeed={10} nextLetterSpeed={200} />
       </div>
       <div className="downArrow" onClick={handleClick}>
-        <KeyboardDoubleArrowDownIcon style={{ fontSize: "10rem", transform: "translateY(20rem)" }}/>
+        <KeyboardDoubleArrowDownIcon
+          style={{ fontSize: "5rem", transform: "translateY(25rem)", color:"whitesmoke" }}
+        />
       </div>
     </div>
   );

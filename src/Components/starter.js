@@ -102,9 +102,11 @@ const Starter = () => {
               margin: "3rem 0",
               justifyContent: "center",
               alignItems: "center",
-              fontSize: "4rem",
-              color: "rgb(181, 190, 203)",
-              fontWeight: "bolder"
+              fontSize: "2.5rem",
+              color: "rgb(112, 112, 112)",
+              fontWeight: "350",
+              fontFamily: "monospace",
+              paddingTop: "1rem"
             }}
           >
             <TextScramble
@@ -127,7 +129,7 @@ const Starter = () => {
           >
             <div
               className="text"
-              style={{ color: "white", paddingLeft: "2rem" }}
+              style={{ color: "white", paddingLeft: "2rem", margin: "5rem auto" }}
             >
               <h1
                 className="heroHeading"
@@ -156,7 +158,8 @@ const Starter = () => {
                 style={{
                   fontSize: "1.1rem",
                   margin: "0",
-                  fontWeight: "lighter",
+                  fontWeight: "100",
+                  maxWidth: "58rem",
                 }}
               >
                 {" "}
@@ -305,7 +308,7 @@ const Starter = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            marginTop: "-6rem",
+            marginTop: "-3rem",
             marginBottom: "5rem",
           }}
         >
@@ -325,7 +328,7 @@ const Starter = () => {
             </p>
             <h2
               style={{
-                marginTop: "0",
+                margin: "0 auto",
                 fontWeight: "lighter",
                 color: "rgb(181, 190, 203)",
               }}
