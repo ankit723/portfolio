@@ -53,11 +53,10 @@ const Starter = () => {
   }, []);
 
   const textsToType = [
-    "web developer",
-    "android developer",
-    "ai/ml engineer",
-    "game developer",
-    "data scientist",
+    "Web Developer",
+    "Android Developer",
+    "ML Engineer",
+    "Game Developer",
   ];
   const [showPage, setShowPage] = useState(false);
   const [logoDone, setLogoDone] = useState(false);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TextScramble from "@twistezo/react-text-scramble";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import ArrowCircleDownOutlinedIcon from '@mui/icons-material/ArrowCircleDownOutlined';
 
 const LogoPage = ({ setDone }) => {
   const [showPage, setShowPage] = useState(false);
@@ -70,8 +71,8 @@ const LogoPage = ({ setDone }) => {
         <TextScramble texts={texts} letterSpeed={10} nextLetterSpeed={200} />
       </div>
       <div className="downArrow" onClick={handleClick}>
-        <KeyboardDoubleArrowDownIcon
-          style={{ fontSize: "5rem", transform: "translateY(25rem)", color:"whitesmoke" }}
+        <ArrowCircleDownOutlinedIcon
+          style={{ fontSize: "3rem", transform: "translateY(25rem)", color: "whitesmoke" }}
         />
       </div>
     </div>
