@@ -84,7 +84,7 @@ const Starter = () => {
       <div
         className="App"
         style={{
-          overflow: "auto",
+          overflowX: "hidden",
           background:
             "repeating-linear-gradient(to bottom, #000000, #2C3E50, #211f2f)",
         }}
@@ -362,7 +362,7 @@ const Starter = () => {
             }}
           >
             <p
-              style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter", color: "white" }}
+              style={{ marginTop: "5rem", fontSize: "1.5rem", fontWeight: "lighter", color: "white" }}
             >
               A Reader or a Learner?
             </p>
@@ -380,6 +380,7 @@ const Starter = () => {
                 style={{
                   color: "white",
                   fontSize: "1.3rem",
+                  margin:"0"
                 }}
               >
                 Blogs
@@ -417,7 +418,7 @@ const Starter = () => {
             <div className="blogItem">
               <BlogItem />
             </div>
-            
+
             <div className="blogItem">
               <BlogItem />
             </div>

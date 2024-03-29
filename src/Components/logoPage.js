@@ -61,7 +61,7 @@ const LogoPage = ({ setDone }) => {
         fontSize: "4.5rem",
         color: "rgb(181, 190, 203)",
         flexDirection: "column",
-        overflow: "auto",
+        overflowX: "hidden",
         fontFamily: "monospace",
       }}
     >

@@ -1,23 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-* {
-    overflow-x: visible;
+/* For Webkit-based browsers like Chrome, Safari */
+/* For Webkit-based browsers like Chrome, Safari */
+/* Vertical Scrollbar */
+::-webkit-scrollbar {
+    width: 3px; /* narrow width of the scrollbar */
 }
+
+/* Horizontal Scrollbar */
+::-webkit-scrollbar-horizontal {
+    height: 3px; /* narrow height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f111; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000; /* color of the scrollbar thumb */
+    border-radius: 3px; /* roundness of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color of the scrollbar thumb on hover */
+}
+
 
 body {
     cursor: none;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* background: repeating-linear-gradient(to right, #000000, #2C3E50, #211f2f); */
-    overflow-x: hidden;
     font-family: "Varela Round", sans-serif;
     scroll-behavior: smooth;
 }
 
 .heroHeading {
+    display: inline;
     background: linear-gradient(to right, rgb(93, 128, 229), rgb(211, 83, 98));
-    background-size: 45%;
+    background-size: 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
@@ -230,7 +251,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1rem;
-    padding: 0 5rem;
+    padding: 0 2rem;
     justify-items: center;
 }
 
@@ -309,7 +330,7 @@ body {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-size: 4.5rem;
-        transform: translate(-12.5rem, 30.5rem);
+        transform: translate(-12.5rem, 33.5rem);
     }
 
 }
