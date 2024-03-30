@@ -50,7 +50,7 @@ const LogoPage = ({ setDone }) => {
 
   return (
     <div
-      className="App"
+      className="App logoPage"
       style={{
         backgroundColor: "black",
         display: "flex",
@@ -66,15 +66,22 @@ const LogoPage = ({ setDone }) => {
       }}
     >
       <div className={`page ${showPage ? "showStarterPage" : ""}`}></div>
-      <div className={`typing-text ${showPage ? "topTheText" : ""}`} id="hello">
+      <div
+        className={`typing-text ${showPage ? "topTheText" : ""}`}
+        id="hello"
+        style={{ position: "relative", zIndex: "1" }}
+      >
         <TextScramble texts={texts} letterSpeed={10} nextLetterSpeed={200} />
       </div>
       <div className="downArrow" onClick={handleClick}>
-        <ArrowCircleDownOutlinedIcon className="homeScrollBtn"
+        <ArrowCircleDownOutlinedIcon
+          className="homeScrollBtn"
           style={{
             fontSize: "3rem",
             marginBottom: "-20rem",
             color: "whitesmoke",
+            position: "relative",
+            zIndex: "1",
           }}
         />
       </div>

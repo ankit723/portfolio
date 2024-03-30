@@ -54,7 +54,7 @@ const Starter = () => {
 
   const textsToType = [
     "Web Developer",
-    "Android Developer",
+    "android Developer",
     "ML Engineer",
     "Game Developer",
   ];
@@ -93,7 +93,9 @@ const Starter = () => {
 
         <div className={`typing-text`}>
           <div
-            className={`typing-text ${showPage ? "topTheText" : ""} homeTypingText`}
+            className={`typing-text ${
+              showPage ? "topTheText" : ""
+            } homeTypingText`}
             id="hello"
             style={{
               display: "flex",
@@ -106,6 +108,8 @@ const Starter = () => {
               fontWeight: "350",
               fontFamily: "monospace",
               paddingTop: "1rem",
+              position: "relative",
+              zIndex: "1",
             }}
           >
             <TextScramble
@@ -315,11 +319,17 @@ const Starter = () => {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              textAlign:"center"
+              textAlign: "center",
             }}
           >
             <p
-              style={{ margin: "0", fontSize: "1.5rem", fontWeight: "lighter" }}
+              style={{
+                margin: "0",
+                fontSize: "1.5rem",
+                fontWeight: "lighter",
+                position: "relative",
+                zIndex: "1",
+              }}
             >
               A tech geek?
             </p>
@@ -328,6 +338,7 @@ const Starter = () => {
                 margin: "0 auto",
                 fontWeight: "lighter",
                 color: "rgb(181, 190, 203)",
+                position:"relative"
               }}
             >
               Use the Terminal to navigate around enter
@@ -372,6 +383,8 @@ const Starter = () => {
                 fontSize: "1.5rem",
                 fontWeight: "lighter",
                 color: "white",
+                position:"relative",
+                zIndex:"1"
               }}
             >
               A Reader or a Learner?
@@ -384,6 +397,8 @@ const Starter = () => {
                 color: "rgb(181, 190, 203)",
                 transition: "1s",
                 marginTop: "-2rem",
+                position:"relative",
+                zIndex:"1"
               }}
             >
               Check out my <br />
@@ -417,9 +432,9 @@ const Starter = () => {
             </div>
 
             <div className="blogItem">
-                <div className="blogDiminished">
-                  <BlogItem />
-                </div>
+              <div className="blogDiminished">
+                <BlogItem />
+              </div>
             </div>
 
             <div className="blogItem">
