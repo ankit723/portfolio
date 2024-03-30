@@ -112,6 +112,7 @@ const Terminal = (props) => {
                 value={input}
                 onChange={handleInputChange}
                 onKeyPress={handleEnterPress}
+                autoCapitalize="sentences"
                 className="terminal-input"
               />
             </div>
