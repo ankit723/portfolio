@@ -36,20 +36,20 @@ const Starter = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const hTag = document.getElementById('BlogMainHeading'); // Replace 'BlogMainHeading' with your specific heading ID
+      const hTag = document.getElementById("BlogMainHeading"); // Replace 'BlogMainHeading' with your specific heading ID
       if (hTag) {
         const { top, bottom } = hTag.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const midPoint = (top + bottom); // Adjusted midpoint
+        const midPoint = top + bottom; // Adjusted midpoint
         if (midPoint >= 0 && midPoint <= windowHeight) {
           setIsHeadingAnimated(true);
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const textsToType = [
@@ -105,7 +105,7 @@ const Starter = () => {
               color: "rgb(112, 112, 112)",
               fontWeight: "350",
               fontFamily: "monospace",
-              paddingTop: "1rem"
+              paddingTop: "1rem",
             }}
           >
             <TextScramble
@@ -117,18 +117,14 @@ const Starter = () => {
         </div>
 
         <div className={`${showStarter ? "showStarter" : ""}`}>
-          <div
-            className="greetings"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              paddingTop: "3rem",
-              width: "100vw",
-            }}
-          >
+          <div className="greetings">
             <div
               className="text"
-              style={{ color: "white", paddingLeft: "2rem", margin: "5rem auto" }}
+              style={{
+                color: "white",
+                paddingLeft: "2rem",
+                margin: "5rem auto",
+              }}
             >
               <h1
                 className="heroHeading"
@@ -138,7 +134,7 @@ const Starter = () => {
                   margin: "0",
                   marginTop: "2rem",
                   color: "transparent",
-                  fontWeight: "bolder"
+                  fontWeight: "bolder",
                 }}
               >
                 Hey there! 👋 <br />{" "}
@@ -300,7 +296,8 @@ const Starter = () => {
           </div>
         </div>
 
-        <div className="Terminal"
+        <div
+          className="Terminal"
           style={{
             color: "white",
             display: "flex",
@@ -350,10 +347,17 @@ const Starter = () => {
 
         <Home />
 
-        <div className="Blog" style={{ display: "flex", flexDirection: "column", justifyContent: 'center' }}>
+        <div
+          className="Blog"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            width: "100vw",
+          }}
+        >
           <div
             className=""
-
             style={{
               display: "flex",
               flexDirection: "column",
@@ -362,25 +366,32 @@ const Starter = () => {
             }}
           >
             <p
-              style={{ marginTop: "5rem", fontSize: "1.5rem", fontWeight: "lighter", color: "white" }}
+              style={{
+                marginTop: "5rem",
+                fontSize: "1.5rem",
+                fontWeight: "lighter",
+                color: "white",
+              }}
             >
               A Reader or a Learner?
             </p>
-            <h2 id="BlogMainHeading"
+            <h2
+              id="BlogMainHeading"
               style={{
                 marginTop: "0",
                 fontWeight: "lighter",
                 color: "rgb(181, 190, 203)",
-                transition: "1s"
+                transition: "1s",
+                marginTop: "-2rem",
               }}
             >
-              Check out my
+              Check out my <br />
               <span
-                className={isHeadingAnimated ? 'blogHeadingAnimated' : ''}
+                className={isHeadingAnimated ? "blogHeadingAnimated" : ""}
                 style={{
                   color: "white",
                   fontSize: "1.3rem",
-                  margin:"0"
+                  margin: "0",
                 }}
               >
                 Blogs
@@ -404,8 +415,7 @@ const Starter = () => {
               <BlogItem />
             </div>
 
-            <div className="blogItem">
-            </div>
+            <div className="blogItem"></div>
 
             <div className="blogItem">
               <BlogItem />

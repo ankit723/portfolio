@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Classes from "./home.module.css";
-import img from '../background-image/arrowDown.png'
+import img from "../background-image/arrowDown.png";
 import ProjectItem from "./projectItem";
 import TechStack from "./techStack.js";
 
@@ -53,7 +53,7 @@ const Home = () => {
           style={{
             margin: "0 2rem",
             color: "white",
-            fontSize: "2.5rem",
+            fontSize: "2rem",
             paddingTop: "4rem",
           }}
         >
@@ -61,9 +61,7 @@ const Home = () => {
         </h1>
         <div className={`${Classes.techStacks} showcase`}>
           <div className="">
-            <TechStack
-              title={"React"}
-            />
+            <TechStack title={"React"} />
           </div>
         </div>
 
@@ -71,7 +69,7 @@ const Home = () => {
           style={{
             margin: "0 2rem",
             color: "white",
-            fontSize: "2.5rem",
+            fontSize: "2rem",
             paddingTop: "6rem",
           }}
         >
