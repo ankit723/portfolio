@@ -91,9 +91,9 @@ const Starter = () => {
       >
         <div className={`page ${showPage ? "showPage" : ""}`}></div>
 
-        <div className={`typing-text `}>
+        <div className={`typing-text`}>
           <div
-            className={`typing-text ${showPage ? "topTheText" : ""}`}
+            className={`typing-text ${showPage ? "topTheText" : ""} homeTypingText`}
             id="hello"
             style={{
               display: "flex",
@@ -315,6 +315,7 @@ const Starter = () => {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              textAlign:"center"
             }}
           >
             <p
@@ -415,7 +416,11 @@ const Starter = () => {
               <BlogItem />
             </div>
 
-            <div className="blogItem"></div>
+            <div className="blogItem">
+                <div className="blogDiminished">
+                  <BlogItem />
+                </div>
+            </div>
 
             <div className="blogItem">
               <BlogItem />
