@@ -3,6 +3,13 @@ import Classes from "./home.module.css";
 import img from "../background-image/arrowDown.png";
 import ProjectItem from "./projectItem";
 import TechStack from "./techStack.js";
+import Chip from '@mui/material/Chip';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+const skills = ['C Programming', 'C++', 'C Sharp', 'Rust', 'R', 'Ruby on Rails', 'Assembly x86 architechture', 'Assembly arm architechture', 'Compiler Design', 'Interpreter Design', 'HTML', 'CSS', 'JavaScript', 'ReactJs', "NextJS", 'AngularJs', 'NodeJs', 'ExpressJs', 'MongoDB', 'MySql', 'PostgreSql', 'FireBase FireStore', 'PHP', 'Laravel', 'LiveWire', "Python", 'Flask', 'Django', 'Java', 'Springboot', 'Kotlin', 'SocketIO', 'Tensorflow', 'Pytorch', 'Numpy', 'Pandas', 'Docker', 'Kubernetes', 'Git', 'Github']
 
 const Home = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -49,75 +56,90 @@ const Home = () => {
           <div className={Classes.navBallLine3} id="navBallLine3"></div>
         </div>
 
-        <h1
-          style={{
-            margin: "0 2rem",
-            color: "white",
-            fontSize: "2rem",
-            paddingTop: "4rem",
-          }}
-        >
-          Tech Stacks
-        </h1>
-        <div className={`${Classes.techStacks} showcase`}>
-          <div className="">
-            <TechStack title={"React"} />
-          </div>
+        <div className="skills">
+          <h1
+            style={{
+              margin: "0 2rem",
+              color: "white",
+              fontSize: "2rem",
+              paddingTop: "4rem",
+            }}
+          >
+            Tech Stacks
+          </h1>
+
+          <Box sx={{ flexGrow: 1, margin: "1rem 8rem" }} className={Classes.skills}>
+            <Grid container spacing={2}>
+              {skills.map((skill, index) => {
+                if (index % 4 == 0) {
+                  return (
+                    <Grid item>
+                      <div className={`${Classes.skill} ${Classes.filledSkill}`}>
+                        {skill}
+                      </div>
+                    </Grid>
+                  )
+                } else {
+                  return (
+                    <Grid item>
+                      <div className={`${Classes.skill} ${Classes.unfilledSkill}`}>
+                        {skill}
+                      </div>
+                    </Grid>
+                  )
+                }
+              })}
+            </Grid>
+          </Box>
         </div>
 
-        <h1
-          style={{
-            margin: "0 2rem",
-            color: "white",
-            fontSize: "2rem",
-            paddingTop: "6rem",
-          }}
-        >
-          Projects
-        </h1>
-        <div className={Classes.projects}>
-          <ProjectItem
-            id={1}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={2}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={3}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={4}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={5}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
-          <ProjectItem
-            id={6}
-            heading={"Project"}
-            description={
-              "loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib vbrgvbrivbr gviubrukbvkr"
-            }
-          />
+        <div className="">
+          <h1
+            style={{
+              margin: "0 2rem",
+              color: "white",
+              fontSize: "2rem",
+              paddingTop: "4rem",
+            }}
+          >
+            Project
+          </h1>
+
+          <Box sx={{ flexGrow: 1 }} className={Classes.projects}>
+            <Grid container spacing={4}>
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+
+              <Grid item>
+                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
+              </Grid>
+            </Grid>
+          </Box>
         </div>
       </div>
     </>

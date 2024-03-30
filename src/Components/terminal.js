@@ -18,7 +18,7 @@ const jsonCommands = {
 
 
 const Terminal = (props) => {
-  const initialPrompt = "CodeShell@DevSpace ~ $";
+  const initialPrompt = "DevShell@webSpace ~ $";
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
   const [outPut, setOutput] = useState([])

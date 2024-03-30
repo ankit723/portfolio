@@ -63,25 +63,33 @@
     margin-left: 6px;
 }
 
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 0 6rem;
-    justify-items: center;
+.projects,
+.skills {
+    margin: 1rem 8rem;
+    margin-right: 0;
+
 }
 
-.techStacks {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 1rem;
-    padding: 0 6rem;
-    justify-items: center;
-}
 
+.skill {
+    border: 2px solid rgba(255, 255, 255, 0.288);
+    color: white;
+    padding: 1rem;
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
 
 @media screen and (max-width: 1124px) {
+
+    .projects,
+    .skills {
+        margin: 2rem !important;
+    }
+
     .projects {
-        padding: 0 2rem !important;
+        margin-right: 2rem !important;
     }
 }
