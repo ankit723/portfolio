@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Classes from "./home.module.css";
-import img from "../background-image/arrowDown.png";
 import ProjectItem from "./projectItem";
-import TechStack from "./techStack.js";
-import Chip from '@mui/material/Chip';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
