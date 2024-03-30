@@ -24,6 +24,7 @@
         0 15px 30px rgba(0, 0, 0, 0.3),
         0 30px 60px rgba(0, 0, 0, 0.25),
         0 45px 90px rgba(0, 0, 0, 0.2);
+    z-index: 100;
 }
 
 .mainNavBall {
@@ -44,6 +45,7 @@
         0 15px 30px rgba(0, 0, 0, 0.3),
         0 30px 60px rgba(0, 0, 0, 0.25),
         0 45px 90px rgba(0, 0, 0, 0.2);
+    z-index: 50;
 }
 
 .navBallLine1,
@@ -80,6 +82,19 @@
         0 30px 60px rgba(0, 0, 0, 0.25),
         0 45px 90px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.filledSkill {
+    background-color: rgba(255, 255, 255, 0.313);
+}
+
+.filledSkill:hover {
+    background-color: rgba(255, 255, 255, 0.567);
+}
+
+.unfilledSkill:hover {
+    background-color: rgba(255, 255, 255, 0.567);
 }
 
 @media screen and (max-width: 1124px) {

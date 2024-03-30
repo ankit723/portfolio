@@ -259,7 +259,7 @@ body {
     transform: rotateZ(var(--rotation));
 }
 
-/* .blogItem:nth-child(1) {
+.blogItem:nth-child(1) {
     --rotation: 15deg;
 }
 
@@ -293,7 +293,7 @@ body {
 
 .blogItem:nth-child(9) {
     --rotation: 15deg;
-} */
+}
 
 .footer {
     margin-top: 5rem;

@@ -71,7 +71,7 @@ const Home = () => {
           <Box sx={{ flexGrow: 1, margin: "1rem 8rem" }} className={Classes.skills}>
             <Grid container spacing={2}>
               {skills.map((skill, index) => {
-                if (index % 4 == 0) {
+                if (index % 2 == 0) {
                   return (
                     <Grid item>
                       <div className={`${Classes.skill} ${Classes.filledSkill}`}>
