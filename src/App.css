@@ -394,7 +394,7 @@ body {
 
     .homeTypingText {
         font-size: 2rem !important;
-        margin-top: 0 !important;
+        margin-top: 2rem !important;
     }
 
     .heroHeading {
@@ -407,5 +407,18 @@ body {
 
     .blogDiminished {
         display: block;
+    }
+
+    .homeScrollBtn {
+        margin-bottom: -15rem !important;
+        font-size: 2rem !important;
+    }
+
+    .terminal-prompt {
+        font-size: 0.7rem !important;
+    }
+
+    .terminal-input {
+        font-size: 0.7rem !important;
     }
 }

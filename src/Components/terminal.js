@@ -103,8 +103,10 @@ const Terminal = (props) => {
               </div>
             ))}
             <div className="terminal-input-container">
-              <span className="terminal-prompt">{initialPrompt}</span>
+              <label htmlFor=""></label>
+              <label className="terminal-prompt" htmlFor="prompt">{initialPrompt}</label>
               <input
+                name="prompt"
                 ref={inputRef}
                 type="text"
                 value={input}

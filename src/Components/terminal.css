@@ -65,6 +65,8 @@
 
 .terminal-prompt {
     color: #fffb00;
+    font-family: monospace;
+    font-size: 0.9rem;
 }
 
 .terminal-input {
