@@ -333,7 +333,7 @@ body {
 .blogHeadingAnimated {
     font-size: 1.3rem;
     z-index: 1000;
-    animation: downHeading 2s forwards;
+    animation: downHeading 0.7s forwards;
     text-align: center;
     font-style: none !important;
 }
