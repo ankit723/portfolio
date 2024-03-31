@@ -100,7 +100,7 @@ const Starter = () => {
             style={{
               display: "flex",
               width: "100vw",
-              margin: "3rem 0",
+              margin: "1.5rem 0",
               justifyContent: "center",
               alignItems: "center",
               fontSize: "2.5rem",
@@ -338,7 +338,7 @@ const Starter = () => {
                 margin: "0 auto",
                 fontWeight: "lighter",
                 color: "rgb(181, 190, 203)",
-                position:"relative"
+                position: "relative",
               }}
             >
               Use the Terminal to navigate around enter
@@ -383,8 +383,8 @@ const Starter = () => {
                 fontSize: "1.5rem",
                 fontWeight: "lighter",
                 color: "white",
-                position:"relative",
-                zIndex:"1"
+                position: "relative",
+                zIndex: "1",
               }}
             >
               A Reader or a Learner?
@@ -397,8 +397,8 @@ const Starter = () => {
                 color: "rgb(181, 190, 203)",
                 transition: "1s",
                 marginTop: "-2rem",
-                position:"relative",
-                zIndex:"1"
+                position: "relative",
+                zIndex: "1",
               }}
             >
               Check out my <br />

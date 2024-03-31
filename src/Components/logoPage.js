@@ -73,7 +73,10 @@ const LogoPage = ({ setDone }) => {
       >
         <TextScramble texts={texts} letterSpeed={10} nextLetterSpeed={200} />
       </div>
-      <div className="downArrow" onClick={handleClick}>
+      <div
+        className={`downArrow ${showPage ? "topTheText" : ""}`}
+        onClick={handleClick}
+      >
         <ArrowCircleDownOutlinedIcon
           className="homeScrollBtn"
           style={{

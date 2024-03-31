@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
+.App {
+    position: relative;
+    background-image: url('./background-image/background.png') !important;
+    background-size: cover !important;
+    /* This ensures the image covers the entire background */
+    background-repeat: no-repeat !important;
+    min-height: 100vh !important;
+    background-attachment: fixed !important;
+    backface-visibility: hidden !important;
+    transform-style: preserve-3d !important;
+    /* transform: translateZ(0) !important; */
+}
+
+.App::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(to bottom, #000000db, #2c3e50db, #211f2fdb);
+    /* Adjust the opacity (last value) to make it darker or lighter */
+}
+
+.logoPage {
+    background-image: url('./background-image/background.png') !important;
+}
+
+.logoPage::before {
+    background: #000000 !important;
+}
+
 ::-webkit-scrollbar {
     width: 3px;
 }
@@ -296,6 +328,10 @@ body {
     width: 100%;
     font-family: monospace;
     font-size: 0.9rem;
+    background-color: #000000e4;
+    color: rgb(255, 255, 255) !important;
+    font-family: monospace;
+    font-size: 1rem;
 }
 
 .footer p {
@@ -412,30 +448,6 @@ body {
 
     .terminal-input {
         font-size: 0.6rem !important;
-    }
-
-    .App {
-        position: relative;
-        background-image: url('./background-image/background.png') !important;
-        background-size: cover !important;
-        /* This ensures the image covers the entire background */
-        background-repeat: no-repeat !important;
-        min-height: 100vh !important;
-        background-attachment: fixed !important;
-        backface-visibility: hidden !important;
-        transform-style: preserve-3d !important;
-        /* transform: translateZ(0) !important; */
-    }
-
-    .App::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #14202b97;
-        /* Adjust the opacity (last value) to make it darker or lighter */
     }
 }
 
