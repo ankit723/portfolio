@@ -413,6 +413,30 @@ body {
     .terminal-input {
         font-size: 0.6rem !important;
     }
+
+    .App {
+        position: relative;
+        background-image: url('./background-image/background.png') !important;
+        background-size: cover !important;
+        /* This ensures the image covers the entire background */
+        background-repeat: no-repeat !important;
+        min-height: 100vh !important;
+        background-attachment: fixed !important;
+        backface-visibility: hidden !important;
+        transform-style: preserve-3d !important;
+        /* transform: translateZ(0) !important; */
+    }
+
+    .App::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #14202b97;
+        /* Adjust the opacity (last value) to make it darker or lighter */
+    }
 }
 
 
