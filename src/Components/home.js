@@ -8,6 +8,14 @@ import Grid from '@mui/material/Grid';
 
 const skills = ['C Programming', 'C++', 'C Sharp', 'Rust', 'R', 'Ruby on Rails', 'Assembly x86 architechture', 'Assembly arm architechture', 'Compiler Design', 'Interpreter Design', 'HTML', 'CSS', 'JavaScript', 'ReactJs', "NextJS", 'AngularJs', 'NodeJs', 'ExpressJs', 'MongoDB', 'MySql', 'PostgreSql', 'FireBase FireStore', 'PHP', 'Laravel', 'LiveWire', "Python", 'Flask', 'Django', 'Java', 'Springboot', 'Kotlin', 'SocketIO', 'Tensorflow', 'Pytorch', 'Numpy', 'Pandas', 'Docker', 'Kubernetes', 'Git', 'Github']
 
+const projects=[
+  {title:"Small Language Model", details:"A self learning small language model, utilising Python(Flask) and tensorflow for the backend and ReactJS for the frontend", url:"https://github.com/ankit723/flask-tensorflow-AI-api"}, 
+  {title:"Newsletter/ Blog", details:"This is a boilerplate code for a newsletter or blog fully responsive webpage with a in-depth admin panel", url:"https://ankit723.github.io/newsLetter/"},
+  {title:"Body gesture recognition", details:"A Deep Learning Gesture Recognition model for Face and Hand using OpenCV, Mediapipe in Python", url:"https://github.com/ankit723/computer-vision"}, 
+  {title:"Hireasy", details:"A concept website made specially for students to make side income and experience financial independent", url:"https://ankit723.github.io/hireasy/"}, 
+  {title:"Space Heist", details:"This is a game, based on the concept of subway surfer using Unity Engine and Language C#(ASP.NET) as Native Language", url:"https://github.com/ankit723/space-heist"},
+]
+
 const Home = () => {
   const [navOpen, setNavOpen] = useState(false);
 
@@ -104,37 +112,13 @@ const Home = () => {
 
           <Box sx={{ flexGrow: 1 }} className={Classes.projects}>
             <Grid container spacing={4}>
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
-
-              <Grid item>
-                <ProjectItem id={1} heading={"Project"} description={"loremfnjv fgvjrkgvr gvbrgjvb tiurbv irbvir vrb hvbrtbrv btbvi rtvirtvbrlib gviubrukbvkr"} />
-              </Grid>
+              {projects.map((project, index)=>{
+                  return(
+                    <Grid item>
+                      <ProjectItem id={index} heading={project.title} description={project.details} url={project.url}/>
+                    </Grid>
+                  )
+              })}
             </Grid>
           </Box>
         </div>

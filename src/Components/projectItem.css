@@ -47,7 +47,11 @@
 }
 
 .container .card .box:hover {
-    transform: translateY(-50px);
+    transform: scale(1.2);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        0 45px 90px rgba(0, 0, 0, 0.2);
 }
 
 .container .card .box:before {
@@ -93,7 +97,7 @@
     position: relative;
     display: inline-block;
     padding: 8px 20px;
-    background: black;
+    background: rgba(53, 118, 209, 0.225) !important;
     border-radius: 5px;
     text-decoration: none;
     color: white;
@@ -104,6 +108,6 @@
 
 .container .card .box .content a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-    background: #fff;
+    background: #fff !important;
     color: #000;
 }
