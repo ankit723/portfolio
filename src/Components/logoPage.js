@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TextScramble from "@twistezo/react-text-scramble";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import ArrowCircleDownOutlinedIcon from "@mui/icons-material/ArrowCircleDownOutlined";
+import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 
 const LogoPage = ({ setDone }) => {
   const [showPage, setShowPage] = useState(false);
@@ -77,12 +78,12 @@ const LogoPage = ({ setDone }) => {
         className={`downArrow ${showPage ? "topTheText" : ""}`}
         onClick={handleClick}
       >
-        <ArrowCircleDownOutlinedIcon
-          className="homeScrollBtn"
+        <ExpandMoreOutlinedIcon
+          className="homeScrollBtn downArrow"
           style={{
             fontSize: "3rem",
             marginBottom: "-20rem",
-            color: "whitesmoke",
+            color: "rgba(52, 52, 52, 0.82)",
             position: "relative",
             zIndex: "1",
           }}

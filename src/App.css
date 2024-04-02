@@ -210,6 +210,23 @@ body {
     opacity: 0 !important;
 }
 
+
+@keyframes updown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.downArrow {
+    animation: updown 1.5s ease-in-out infinite;
+}
+
 @keyframes changeOpacity {
     from {
         opacity: 0;
