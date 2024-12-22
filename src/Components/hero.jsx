@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import back1 from '../background-image/back1.png';
 import github from '../background-image/github.jpg';
 import linkedin from '../background-image/linked.webp';
 import leetcode from '../background-image/LeetCode.png';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
+import Modal from "react-modal";  // Import react-modal
+import ContactForm from './contactForm';
+
+Modal.setAppElement("#root");
 
 const Hero = ({ showStarter }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open the modal
+  const openModal = () => setIsModalOpen(true);
+
+  // Function to close the modal
+  const closeModal = () => setIsModalOpen(false);
   return (
     <motion.div 
       className={`${showStarter ? 'showStarter' : ''}`}
@@ -14,6 +24,17 @@ const Hero = ({ showStarter }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
+
+      <Modal
+        isOpen={isModalOpen} // Controls whether the modal is open or not
+        onRequestClose={closeModal} // Function to close the modal (triggered by background click or escape key)
+        contentLabel="Example Modal"
+        className="modal-content" // Custom class for modal content
+        overlayClassName="modal-overlay" // Custom class for modal overlay
+      >
+        <ContactForm />
+      </Modal>
+
       <div className="greetings">
         <motion.div
           className="text"
@@ -64,8 +85,50 @@ const Hero = ({ showStarter }) => {
             transition={{ delay: 0.8, duration: 1 }}
           >
             {' '}
-            An 18-year-old, Who like build stuffs with a passion for technology and a love for coding. Currently pursuing my B.Tech in Computer Science at CV Raman Global University, Bhubaneswar, I find joy in exploring the vast world of programming.
+            A Tech Geek, Who likes build stuffs with a passion for technology and a love for coding. Currently pursuing my B.Tech in Computer Science with over 2 years of Experience and 20+ successfully deployed and delivered projects, Collaborate with me now !.
           </motion.p>
+
+          <motion.button
+            style={{
+              marginTop: '2rem',
+              fontSize: '1.2rem',
+              padding: '0.8rem 1.5rem',
+              borderRadius: '0.7rem',
+              backgroundColor: 'white',
+              position: 'relative',
+              border: '4px solid transparent',
+              backgroundImage: 'linear-gradient(white, white), linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #3498db)',
+              backgroundSize: '400% 100%',
+              backgroundOrigin: 'border-box',
+              backgroundClip: 'padding-box, border-box',
+              animation: 'border-animation 3s linear infinite',
+            }}
+            initial={{ scale: 0.9, opacity: 0, x: -100 }}
+            animate={{ scale: 1, opacity: 1, x: 0 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={openModal}
+          >
+            Collaborate Now!
+          </motion.button>
+
+          <style>
+            {`
+              @keyframes border-animation {
+                0% {
+                  background-position: 0% 50%;
+                }
+                50% {
+                  background-position: 100% 50%;
+                }
+                100% {
+                  background-position: 50% 0%;
+                }
+              }
+            `}
+          </style>
+
+
         </motion.div>
 
         <motion.div 

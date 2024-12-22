@@ -13,7 +13,6 @@ import ServicesSection from './services';
 import Testimonials from './testimonial';
 
 
-
 const Home = () => {
 
   return (
