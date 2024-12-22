@@ -3,6 +3,7 @@ import TextScramble from "@twistezo/react-text-scramble";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import ArrowCircleDownOutlinedIcon from "@mui/icons-material/ArrowCircleDownOutlined";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import StarterMousedot from "./starterMouseDot"
 
 const LogoPage = ({ setDone }) => {
   const [showPage, setShowPage] = useState(false);
@@ -50,6 +51,8 @@ const LogoPage = ({ setDone }) => {
   ];
 
   return (
+    <>
+    <StarterMousedot />
     <div
       className="App logoPage"
       style={{
@@ -65,6 +68,7 @@ const LogoPage = ({ setDone }) => {
         overflowX: "hidden",
         fontFamily: "monospace",
       }}
+      onClick={handleClick}
     >
       <div className={`page ${showPage ? "showStarterPage" : ""}`}></div>
       <div
@@ -90,6 +94,7 @@ const LogoPage = ({ setDone }) => {
         />
       </div>
     </div>
+    </>
   );
 };
 

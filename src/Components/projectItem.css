@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-
 .container {
     display: flex;
     justify-content: center;
@@ -15,20 +13,8 @@
         inset -5px -5px 15px rgba(255, 255, 255, 0.1),
         5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-
-    transition: 0.5s;
-}
-
-.container .card:nth-child(1) .box .content a {
-    background: #2196f3;
-}
-
-.container .card:nth-child(2) .box .content a {
-    background: #e91e63;
-}
-
-.container .card:nth-child(3) .box .content a {
-    background: #23c186;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .container .card .box {
@@ -43,7 +29,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: 0.5s;
+    transition: transform 0.5s ease-in-out;
 }
 
 .container .card .box:hover {
@@ -54,19 +40,13 @@
         0 45px 90px rgba(0, 0, 0, 0.2);
 }
 
-.container .card .box:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.03);
-}
-
 .container .card .box .content {
     padding: 20px;
     text-align: center;
+    z-index: 1;
+    position: absolute; /* So that the content is stacked on top of the image */
+    color: #fff;
+    transition: opacity 0.3s ease;
 }
 
 .container .card .box .content h2 {
@@ -79,18 +59,17 @@
 
 .container .card .box .content h3 {
     font-size: 1.5rem;
-    color: #fff;
-    z-index: 1;
-    transition: 0.5s;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
+    opacity: 1; /* Initially visible */
 }
 
 .container .card .box .content p {
     font-size: 0.8rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
-    z-index: 1;
-    transition: 0.5s;
+    opacity: 1; /* Initially visible */
+    transition: opacity 0.3s ease;
 }
 
 .container .card .box .content a {
@@ -103,11 +82,38 @@
     color: white;
     margin-top: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: 0.5s;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container .card .box .content a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
     background: #fff !important;
     color: #000;
+}
+
+.container .card .box .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.container .card:hover .box .image {
+    opacity: 1; /* Show image on hover */
+}
+
+.container .card:hover .box .content {
+    opacity: 0; /* Hide text on hover */
+}
+
+.container .card .box .content:hover h3 {
+    color: #2196f3; /* Hover effect for title */
+}
+
+.container .card .box .content:hover p {
+    opacity: 0.8; /* Hover effect for description */
 }
