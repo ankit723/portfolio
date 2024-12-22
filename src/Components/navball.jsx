@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import Classes from "./home.module.css";
+import { motion } from 'framer-motion';
+import { DiTechcrunch } from 'react-icons/di';
+import { AiOutlineProject } from "react-icons/ai";
+import { FaUserTie } from "react-icons/fa";
+import { MdMiscellaneousServices } from "react-icons/md";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const Navball = () => {
     const [navOpen, setNavOpen] = useState(false);
@@ -37,15 +43,26 @@ const Navball = () => {
     };
 
   return (
-    <>
-    <div className={Classes.mainNavBall} id="mainNavBall"></div>
+    <motion.div
+      style={{ position: "fixed", zIndex: 1000, top: "2rem", right: "2rem" }}
+      initial={{ opacity: 0, y: -100, x: 100 }}
+      animate={{ opacity: 1, y: -35, x: 35 }}
+      transition={{ duration: 1 }}
+    >
+    <div className={Classes.mainNavBall} id="mainNavBall" style={{fontSize:"1.5rem", color:'black'}}>
+      <a href='#projects' className="edge-element"><AiOutlineProject /></a>
+      <a href='#services' className="edge-element"><MdMiscellaneousServices /></a>
+      <a href='#' className="edge-element"><DiTechcrunch /></a>
+      <a href='#experiences' className="edge-element"><FaUserTie /></a>
+      <a href='#testimonials' className="edge-element"><FaQuoteLeft /></a>
+    </div>  
 
     <div className={Classes.navBall} onClick={handleNavOpen}>
         <div className={Classes.navBallLine1} id="navBallLine1"></div>
         <div className={Classes.navBallLine2} id="navBallLine2"></div>
         <div className={Classes.navBallLine3} id="navBallLine3"></div>
     </div>
-    </>
+    </motion.div>
   )
 }
 

@@ -1,11 +1,16 @@
 import TextScramble from '@twistezo/react-text-scramble';
-import React from 'react';
+import { motion } from 'framer-motion';
 
 const TypingText = ({ showPage }) => {
   const textsToType = ['Web Developer', 'android Developer', 'ML Engineer', 'Game Developer'];
 
   return (
-    <div className={`typing-text`}>
+    <motion.div 
+      className={`typing-text`}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div
         className={`typing-text ${showPage ? 'topTheText' : ''} homeTypingText`}
         id="hello"
@@ -26,7 +31,7 @@ const TypingText = ({ showPage }) => {
       >
         <TextScramble texts={textsToType} letterSpeed={10} nextLetterSpeed={200} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import {motion} from 'framer-motion'
 import 'react-vertical-timeline-component/style.min.css';
@@ -7,6 +7,7 @@ import arbreCreations from "../background-image/arbreCreations.png"
 import mudslide from "../background-image/mudslide.png"
 import arthalab from "../background-image/arthalab.png"
 import finanalyz from "../background-image/finanalyz.png"
+import ExperienceCard from './experienceCard'
 
 const experiences = [
     {
@@ -83,90 +84,6 @@ export const textVariant = (delay) => {
       },
     };
 };
-
-const ExperienceCard=({experience})=>{
-  return(
-    <VerticalTimelineElement
-  contentStyle={{
-    background: "#2a2b2f",
-    color: "#fff",
-  }}
-  contentArrowStyle={{
-    borderRight: "7px solid #2a2b2f",
-  }}
-  date={experience.date}
-  iconStyle={{
-    background: experience.iconBg,
-  }}
-  icon={
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        height: "100%",
-      }}
-    >
-      <img
-        src={experience.icon}
-        alt=""
-        style={{
-          width: "60%",
-          height: "60%",
-          objectFit: "contain",
-          borderRadius: "100%",
-        }}
-      />
-    </div>
-  }
->
-  <div>
-    <h3
-      style={{
-        color: "#fff",
-        fontSize: "24px",
-        fontWeight: "bold",
-      }}
-    >
-      {experience.title}
-    </h3>
-    <p
-      style={{
-        color: "#b0b0b0",
-        fontSize: "16px",
-        fontWeight: "600",
-      }}
-    >
-      {experience.company_name}
-    </p>
-  </div>
-
-  <ul
-    style={{
-      marginTop: "20px",
-      listStyleType: "disc",
-      marginLeft: "20px",
-      lineHeight: "1.5",
-    }}
-  >
-    {experience.points.map((point, index) => (
-      <li
-        key={index}
-        style={{
-          color: "#ffffff",
-          fontSize: "14px",
-          paddingLeft: "5px",
-          letterSpacing: "0.05em",
-        }}
-      >
-        {point}
-      </li>
-    ))}
-  </ul>
-</VerticalTimelineElement>
-  )
-}
 
 const Experience = () => {
   return (

@@ -103,13 +103,10 @@
 
 @media screen and (max-width: 1124px) {
 
-    .projects,
     .skills {
         margin: 2rem !important;
     }
 
-    .projects {
-        margin-right: 2rem !important;
-    }
+    
 }
 

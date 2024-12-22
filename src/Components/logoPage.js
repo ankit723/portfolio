@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TextScramble from "@twistezo/react-text-scramble";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 import ArrowCircleDownOutlinedIcon from "@mui/icons-material/ArrowCircleDownOutlined";
@@ -8,7 +8,30 @@ import StarterMousedot from "./starterMouseDot"
 const LogoPage = ({ setDone }) => {
   const [showPage, setShowPage] = useState(false);
 
+  const arrowRef = useRef(null); // Create a ref to attach to the element
+  const [arrowPosition, setArrowPosition] = useState({ x: 0, y: 0 }); // State to store the x and y coordinates
+
+
   const [isAtPosition, setIsAtPosition] = useState(false);
+
+  const updatePosition = () => {
+    if (arrowRef.current) {
+      const rect = arrowRef.current.getBoundingClientRect(); // Get the bounding rectangle
+      setArrowPosition({ x: rect.left, y: rect.top }); // Update the state
+    }
+  };
+
+  useEffect(() => {
+    // Call updatePosition when the component mounts
+    updatePosition();
+    // Optionally add a resize event listener to update on window resize
+    window.addEventListener("resize", updatePosition);
+
+    return () => {
+      window.removeEventListener("resize", updatePosition); // Cleanup event listener
+    };
+  }, []);
+
   useEffect(() => {
     function handleScroll() {
       const scrollTop =
@@ -52,7 +75,7 @@ const LogoPage = ({ setDone }) => {
 
   return (
     <>
-    <StarterMousedot />
+    <StarterMousedot arrowLocation={arrowPosition}/>
     <div
       className="App logoPage"
       style={{
@@ -81,6 +104,7 @@ const LogoPage = ({ setDone }) => {
       <div
         className={`downArrow ${showPage ? "topTheText" : ""}`}
         onClick={handleClick}
+        ref={arrowRef}
       >
         <ExpandMoreOutlinedIcon
           className="homeScrollBtn downArrow"

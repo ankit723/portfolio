@@ -42,7 +42,7 @@ const ProjectsContainer = () => {
             </h1>
 
             <Box sx={{ flexGrow: 1 }} className={Classes.projects}>
-                <Grid container spacing={4}>
+                <Grid container spacing={4} className={Classes.projectsGrid}>
                     {projects.map((project, index) => {
                         const projectAnimation = {
                             hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 }, // Alternating from left and right

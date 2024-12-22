@@ -9,6 +9,8 @@ import { motion, useInView } from 'framer-motion';
 import TechStacks from './techStacks';
 import ProjectsContainer from './projectsContainer';
 import Experience from './experience';
+import ServicesSection from './services';
+import Testimonials from './testimonial';
 
 
 
@@ -20,12 +22,26 @@ const Home = () => {
         <Navball />
 
         {/* Skills Section */}
-        <TechStacks />
+        <div id="skills">
+          <TechStacks />
+        </div>
 
         {/* Projects Section */}
-        <ProjectsContainer />
+        <div id="projects">
+          <ProjectsContainer />
+        </div>
+        
+        <div id="services">
+          <ServicesSection />
+        </div>
 
-        <Experience />
+        <div id="experiences">
+          <Experience />
+        </div>
+
+        <div id="testimonials">
+          <Testimonials />
+        </div>
         
       </div>
     </>

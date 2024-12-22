@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt, FaDocker, FaGithub, FaJava } from 'react-icons/fa';
-import { SiC, SiCplusplus, SiCsharp, SiRust, SiR, SiRubyonrails, SiLinux, SiArm, SiNextdotjs, SiAngular, SiExpress, SiMongodb, SiMysql, SiPostgresql, SiFirebase, SiPhp, SiLaravel, SiFlask, SiDjango, SiSpringboot, SiKotlin, SiSocketdotio, SiTensorflow, SiPytorch, SiNumpy, SiPandas, SiKubernetes, SiGooglechrome, SiGoogleassistant } from 'react-icons/si';
+import { SiC, SiCplusplus, SiRust, SiR, SiRubyonrails, SiLinux, SiArm, SiNextdotjs, SiAngular, SiExpress, SiMongodb, SiMysql, SiPostgresql, SiFirebase, SiPhp, SiLaravel, SiFlask, SiDjango, SiSpringboot, SiKotlin, SiSocketdotio, SiTensorflow, SiPytorch, SiNumpy, SiPandas, SiKubernetes, SiGooglechrome, SiGoogleassistant } from 'react-icons/si';
 
 
 
@@ -20,7 +20,6 @@ const TechStacks = () => {
     const skills = [
         { name: 'C Programming', icon: <SiC color="#A8B9CC" /> },
         { name: 'C++', icon: <SiCplusplus color="#00599C" /> },
-        { name: 'C Sharp', icon: <SiCsharp color="#68217A" /> },
         { name: 'Rust', icon: <SiRust color="#DEA584" /> },
         { name: 'R', icon: <SiR color="#276DC3" /> },
         { name: 'Ruby on Rails', icon: <SiRubyonrails color="#CC0000" /> },

@@ -1,11 +1,33 @@
 import React, { useEffect, useState } from "react";
 
-const StarterMouseDot = () => {
+const StarterMouseDot = ({arrowLocation}) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [cursorGradient, setCursorGradient] = useState(null);
+
+  useEffect(() => {
+    const distance = Math.sqrt(
+      Math.pow(arrowLocation.x - position.x, 2) + 
+      Math.pow(arrowLocation.y - position.y, 2)
+    );
+  
+    const maxDistance = Math.sqrt(
+      Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2)
+    );
+    const normalizedDistance = 1 - Math.min(distance / maxDistance, 1);
+    const brightnessFactor = 100 * normalizedDistance;
+  
+    const gradient = `radial-gradient(circle, 
+      ${gradientColors.color1} ${Math.max(5, brightnessFactor)}%, 
+      ${gradientColors.color2} ${Math.min(100, brightnessFactor + 20)}%, 
+      ${gradientColors.color3} 100%)`;
+  
+    setCursorGradient(gradient);
+  }, [arrowLocation, position]);
+
   const [gradientColors, setGradientColors] = useState({
-    color1: "rgba(255, 0, 150, 0.4)",
-    color2: "rgba(0, 255, 255, 0.2)",
-    color3: "rgba(0, 0, 0, 0)",
+    color1: "rgba(255, 0, 149, 0.14)",
+    color2: "rgba(0, 255, 255, 0.15)",
+    color3: "rgba(38, 0, 255, 0.15)",
   });
   const [isActive, setIsActive] = useState(true); // Toggle for the effect
 
@@ -69,7 +91,7 @@ const StarterMouseDot = () => {
             position: "absolute",
             pointerEvents: "none",
             borderRadius: "50%",
-            background: `radial-gradient(circle, ${gradientColors.color1}, ${gradientColors.color2}, ${gradientColors.color3} 65%)`,
+            background: cursorGradient,
             mixBlendMode: "screen",
             boxShadow: `0 0 30px ${gradientColors.color1}, 
                         0 0 60px ${gradientColors.color2}, 
